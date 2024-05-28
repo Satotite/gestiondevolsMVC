@@ -1,0 +1,91 @@
+﻿@model gestiondevols.Models.Ville
+
+<h2>Détails de la ville</h2>
+<div>
+    <dl class="row">
+        <dt class="col-sm-2">
+            IdVille
+        </dt>
+        <dd class="col-sm-10">
+            @Model.IdVille
+        </dd>
+        <dt class="col-sm-2">
+            Nom
+        </dt>
+        <dd class="col-sm-10">
+            @Model.Nom
+        </dd>
+    </dl>
+</div>
+
+<h2>Vols de départ de cette ville</h2>
+@if (Model.VolsDepart != null && Model.VolsDepart.Any())
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>IdVol</th>
+                <th>Référence</th>
+                <th>Ville de départ</th>
+                <th>Ville d'arrivée</th>
+                <th>Temps de départ</th>
+                <th>Temps d'arrivée</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var vol in Model.VolsDepart)
+            {
+                <tr>
+                    <td>@vol.IdVol</td>
+                    <td>@vol.Reference</td>
+                    <td>@vol.VilleDepart</td>
+                    <td>@vol.VilleArrivee</td>
+                    <td>@vol.TempsDepart</td>
+                    <td>@vol.TempsArrivee</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>Aucun vol de départ associé à cette ville.</p>
+}
+
+<h2>Vols d'arrivée à cette ville</h2>
+@if (Model.VolsArrivee != null && Model.VolsArrivee.Any())
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>IdVol</th>
+                <th>Référence</th>
+                <th>Ville de départ</th>
+                <th>Ville d'arrivée</th>
+                <th>Temps de départ</th>
+                <th>Temps d'arrivée</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var vol in Model.VolsArrivee)
+            {
+                <tr>
+                    <td>@vol.IdVol</td>
+                    <td>@vol.Reference</td>
+                    <td>@vol.VilleDepart</td>
+                    <td>@vol.VilleArrivee</td>
+                    <td>@vol.TempsDepart</td>
+                    <td>@vol.TempsArrivee</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>Aucun vol d'arrivée associé à cette ville.</p>
+}
+
+<div>
+    <a asp-action="Index">Retour à la liste</a>
+</div>

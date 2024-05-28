@@ -1,0 +1,38 @@
+﻿@model IEnumerable<gestiondevols.Models.Ville> 
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Créer Nouvelle Ville</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                IdVille
+            </th>
+            <th>
+                Nom
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.IdVille</td>
+                <td>@item.Nom</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.IdVille">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.IdVille">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.IdVille">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

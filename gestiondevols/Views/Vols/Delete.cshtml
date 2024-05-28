@@ -1,0 +1,37 @@
+﻿@model gestiondevols.Models.Vol
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete</h1>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Vol</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>IdVol</dt>
+        <dd>@Model.IdVol</dd>
+
+        <dt>Reference</dt>
+        <dd>@Model.Reference</dd>
+
+        <dt>Ville de départ</dt>
+        <dd>@Model.VilleDepart</dd>
+
+        <dt>Ville d'arrivée</dt>
+        <dd>@Model.VilleArrivee</dd>
+
+        <dt>Temps de départ</dt>
+        <dd>@Model.TempsDepart</dd>
+
+        <dt>Temps d'arrivée</dt>
+        <dd>@Model.TempsArrivee</dd>
+    </dl>
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="IdVol" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>

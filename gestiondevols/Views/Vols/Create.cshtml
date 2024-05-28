@@ -1,0 +1,56 @@
+﻿@model gestiondevols.Models.Vol
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+
+<h4>Vol</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="IdVol" class="control-label"></label>
+                <input asp-for="IdVol" class="form-control" />
+                <span asp-validation-for="IdVol" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Reference" class="control-label"></label>
+                <input asp-for="Reference" class="form-control" />
+                <span asp-validation-for="Reference" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="VilleDepart" class="control-label"></label>
+                <input asp-for="VilleDepart" class="form-control" />
+                <span asp-validation-for="VilleDepart" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="VilleArrivee" class="control-label"></label>
+                <input asp-for="VilleArrivee" class="form-control" />
+                <span asp-validation-for="VilleArrivee" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TempsDepart" class="control-label"></label>
+                <input asp-for="TempsDepart" class="form-control" />
+                <span asp-validation-for="TempsDepart" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TempsArrivee" class="control-label"></label>
+                <input asp-for="TempsArrivee" class="form-control" />
+                <span asp-validation-for="TempsArrivee" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

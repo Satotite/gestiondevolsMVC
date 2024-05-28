@@ -1,0 +1,44 @@
+﻿@model IEnumerable<gestiondevols.Models.Vol>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+
+<p>
+    <a asp-action="Create">Créer Nouveau Vol</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>IdVol</th>
+            <th>Reference</th>
+            <th>Ville de départ</th>
+            <th>Ville d'arrivée</th>
+            <th>Temps de départ</th>
+            <th>Temps d'arrivée</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var vol in Model)
+        {
+            <tr>
+                <td>@vol.IdVol</td>
+                <td>@vol.Reference</td>
+                <td>@vol.VilleDepart</td>
+                <td>@vol.VilleArrivee</td>
+                <td>@vol.TempsDepart</td>
+                <td>@vol.TempsArrivee</td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@vol.IdVol">Details</a> |
+                    <a asp-action="Edit" asp-route-id="@vol.IdVol">Edit</a> |
+                    <a asp-action="Delete" asp-route-id="@vol.IdVol">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

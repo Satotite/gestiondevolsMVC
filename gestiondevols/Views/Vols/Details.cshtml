@@ -1,0 +1,33 @@
+﻿@model gestiondevols.Models.Vol
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Détails du vol</h1>
+
+<div>
+    <dl>
+        <dt>IdVol</dt>
+        <dd>@Model.IdVol</dd>
+
+        <dt>Référence</dt>
+        <dd>@Model.Reference</dd>
+
+        <dt>Ville de départ</dt>
+        <dd>@Model.VilleDepart</dd>
+
+        <dt>Ville d'arrivée</dt>
+        <dd>@Model.VilleArrivee</dd>
+
+        <dt>Temps de départ</dt>
+        <dd>@Model.TempsDepart</dd>
+
+        <dt>Temps d'arrivée</dt>
+        <dd>@Model.TempsArrivee</dd>
+    </dl>
+</div>
+
+<div>
+    <a asp-action="Index">Retour à la liste</a>
+</div>
